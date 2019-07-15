@@ -1,4 +1,6 @@
-(function executeRule(current, previous /*null when async*/) {
+(function executeRule(current, previous /*null when async*/) {	
+
+//BusinessRule - Before | Insert | Update
 
 	var n1 = current.number;
 	n1 = n1.toString();
