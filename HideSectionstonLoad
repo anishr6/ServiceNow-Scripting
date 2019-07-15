@@ -1,0 +1,10 @@
+function onLoad() {
+   
+	if(g_form.getValue('agent').toString()=="false")          
+      g_form.setSectionDisplay('agent_details',false);
+   
+}
+
+
+// Assume that the name of the Section is 'agent'. 
+// You can see the name of the section on the Form Design or you could use alert() to display section names.
