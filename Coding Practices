@@ -1,6 +1,31 @@
-// There should not be semicolons after the loop statements defined.
-// Semicolons are optional if the next variable declaration or operation is on a new line.
-// do(...) while(....); takes a semicolon.
-// Function statements however should not end with a semicolon.
-function (arg) { /*do this*/ } //NO semicolon here.
-// While you define the for loop, the last condition for increment does not take a semicolon.
+** There should not be semicolons after the loop statements defined.
+** Semicolons are optional if the next variable declaration or operation is on a new line.
+** do(...) while(....); takes a semicolon.
+** Function statements however should not end with a semicolon.
+** function (arg) { /*do this*/ } //NO semicolon here.
+** While you define the for loop, the last condition for increment does not take a semicolon.
+** Declare variables before using it.
+** 'gs' is a built in object - hence gs.info();
+** A string should open and close with the same quotes - be it single or double.
+
+**********EXAMPLE*************
+
+var firstName = "Anish";
+var secondName = 'Reghu';
+var name = firstName + " " + secondName;
+gs.info("Length of Name is: "+name.length);     //Use the length function to find the legth of strings.
+
+
+** Use '\' character to escape checks.
+** Use '\\' to print the backslash character.
+
+***********EXAMPLE**************
+
+var myCar = 'Anish's car';    //This would throw error.
+var myCar = 'Anish\'s car';   //This won't throw error because parser no more considers the single quote that follows the backslash.
+
+
+******* OPERATORS********
+
+** Parantheses help execute the lower precedence operators execute first in a long chain of operations.
+
