@@ -1,3 +1,4 @@
+
 ** There should not be semicolons after the loop statements defined.
 ** Semicolons are optional if the next variable declaration or operation is on a new line.
 ** do(...) while(....); takes a semicolon.
@@ -28,4 +29,22 @@ var myCar = 'Anish\'s car';   //This won't throw error because parser no more co
 ******* OPERATORS********
 
 ** Parantheses help execute the lower precedence operators execute first in a long chain of operations.
+
+
+**********STRING*********
+
+** INTEGER_VALUE.toString() method converts integer to String.
+** parseInt(STRING_VALUE) converts String to integer.
+
+***********EXAMPLE************
+
+var i = 5;
+var iStr = i.toString();
+
+var j = "5";
+var jNum = parseInt(j);
+
+gs.info("Value of i is: " + i);
+gs.info('jNum value is: ' + jNum);
+gs.info("10 added to jNum is:" + (jNum+10));
 
