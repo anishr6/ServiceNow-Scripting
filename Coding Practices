@@ -1,6 +1,7 @@
 
 ** There should not be semicolons after the loop statements defined.
 ** Semicolons are optional if the next variable declaration or operation is on a new line.
+***REMEMBER THAT Script editors in ServiceNow insist for semicolons.
 ** do(...) while(....); takes a semicolon.
 ** Function statements however should not end with a semicolon.
 ** function (arg) { /*do this*/ } //NO semicolon here.
@@ -9,7 +10,9 @@
 ** 'gs' is a built in object - hence gs.info();
 ** A string should open and close with the same quotes - be it single or double.
 
-**********EXAMPLE*************
+
+E X A M P L E
+=============
 
 var firstName = "Anish";
 var secondName = 'Reghu';
@@ -20,31 +23,54 @@ gs.info("Length of Name is: "+name.length);     //Use the length function to fin
 ** Use '\' character to escape checks.
 ** Use '\\' to print the backslash character.
 
-***********EXAMPLE**************
+
+E X A M P L E
+=============
 
 var myCar = 'Anish's car';    //This would throw error.
 var myCar = 'Anish\'s car';   //This won't throw error because parser no more considers the single quote that follows the backslash.
 
 
-******* OPERATORS********
 
-** Parantheses help execute the lower precedence operators execute first in a long chain of operations.
 
 
 **********STRING*********
 
 ** INTEGER_VALUE.toString() method converts integer to String.
 ** parseInt(STRING_VALUE) converts String to integer.
+** Use 'type of' keyword to find the data type of any variable.
 
-***********EXAMPLE************
+
+E X A M P L E
+=============
 
 var i = 5;
 var iStr = i.toString();
 
 var j = "5";
-var jNum = parseInt(j);
+var jNum = parseInt(j/2);                         //Returns 2
+var jDec = parseFloat(j/2);                       //Returns 2.5
 
 gs.info("Value of i is: " + i);
-gs.info('jNum value is: ' + jNum);
+gs.info('jNum value is: ' + jNum);                
+gs.info('jDec value is: ' + jDec);                
 gs.info("10 added to jNum is:" + (jNum+10));
+gs.info('Data type of j is: '+ typeof j);
 
+
+******* OPERATORS********
+
+** Parantheses help execute the lower precedence operators execute first in a long chain of operations.
+** Assignments are always left to right.
+** Operators can be used within the gs.info() as well.
+
+var a = 0;
+var b = 1;
+var c ='1';
+
+gs.info(a > b);       //false
+gs.info(a < b);       //true
+gs.info(a == b);      //false
+gs.info(a = b);       //1 - assigns value of 'b' to 'a' and dsiplays that value.
+gs.info(b == c);      //true - because it just checks the value in these variables not the data types.
+gs.info(b === c);     //false - because data types are different - one is a number, other one is a string.
