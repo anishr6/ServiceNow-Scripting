@@ -1,0 +1,8 @@
+var gr = new GlideRecord('incident');         //Write the table name in single quotes.
+gr.addActiveQuery();
+gr.query();
+
+while(gr.next())
+{
+gs.info(gr.getValue('number'));
+}
