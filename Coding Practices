@@ -1,0 +1,6 @@
+// There should not be semicolons after the loop statements defined.
+// Semicolons are optional if the next variable declaration or operation is on a new line.
+// do(...) while(....); takes a semicolon.
+// Function statements however should not end with a semicolon.
+function (arg) { /*do this*/ } //NO semicolon here.
+// While you define the for loop, the last condition for increment does not take a semicolon.
