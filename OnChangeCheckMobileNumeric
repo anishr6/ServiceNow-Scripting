@@ -1,0 +1,15 @@
+function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }
+	
+	var mob = g_form.getValue('mobile_number');
+	
+	if(isNaN(mob) || newValue.length!=10)
+		{
+			alert("Mobile number should be numeric and 10 digits in total!");
+			g_form.setValue('mobile_number',"");
+			return false;
+		}
+
+}
