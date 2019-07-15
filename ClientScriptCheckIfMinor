@@ -1,0 +1,19 @@
+function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }
+	
+var cdt = newValue; //First Date/Time field
+var dttype = 'second'; //this can be day, hour, minute, second. By default it will return seconds.
+
+var ajax = new GlideAjax('CalculateAgeDiff');
+ajax.addParam('sysparm_name','getNowDateTimeDiff'); //Function name in Script include
+ajax.addParam('sysparm_fdt', cdt);
+ajax.addParam('sysparm_difftype', dttype);
+var an = ajax.getXML(doSomething);
+alert("Time difference: "+ an);
+
+function doSomething(response){
+var answer = response.responseXML.documentElement.getAttribute("answer");
+return answer;
+}
