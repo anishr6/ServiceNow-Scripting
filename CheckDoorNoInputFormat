@@ -1,0 +1,41 @@
+function onChange(control, oldValue, newValue, isLoading, isTemplate) {    
+if (isLoading || newValue === '') 
+{       
+  return;    
+} 	 	
+
+//var chr='0123456789abcdefghijklmnopqrstuvwzyz-/'; 	 	
+//var code, i, len; 	 	
+/*for (i = 0, len = newValue.length; i < len; i++) 
+{ 		
+code = newValue.charCodeAt(i); 		
+
+if (!(code > 47 && code < 58) && // numeric (0-9) 			
+!(code > 64 && code < 91) && // upper alpha (A-Z) 			
+!(code > 96 && code < 123) // lower alpha (a-z) 			
+&& (code!=45) && (code!=47) && (code!=32))  		
+{ 			 			
+  g_form.setValue('door_no',""); 			
+  return false; 		
+} 		 		
+
+else if (!(code > 47 && code < 58) // numeric (0-9)	
+&& ((code > 64 && code < 91) // upper alpha (A-Z) 			
+|| (code > 96 && code < 123) // lower alpha (a-z) 			
+|| (code!=45) || (code!=47) || (code!=32))) //characters [/, -, space] 		
+{ 			
+  alert("Door no should contain numeric value or alphanumeric!"); 			
+  g_form.setValue('door_no',""); 			
+  return false; 		
+} 		
+
+else  			
+  return true;*/ 	 
+  
+  var regex=/^[0-9a-zA-Z/-\s]*$/; 
+  if(!regex.test(newValue)) 
+  { 
+  alert("Allowed characters: A-Z, a-z, 0-9, /, - and space"); 
+  g_form.setValue('door_no',""); 	    //Type appropriate comment here, and begin script below     
+  }
+  }
