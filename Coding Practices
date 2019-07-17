@@ -1,4 +1,3 @@
-
 ** There should not be semicolons after the loop statements defined.
 ** Semicolons are optional if the next variable declaration or operation is on a new line.
 ***REMEMBER THAT Script editors in ServiceNow insist for semicolons.
@@ -29,9 +28,6 @@ E X A M P L E
 
 var myCar = 'Anish's car';    //This would throw error.
 var myCar = 'Anish\'s car';   //This won't throw error because parser no more considers the single quote that follows the backslash.
-
-
-
 
 
 **********STRING*********
@@ -74,3 +70,45 @@ gs.info(a == b);      //false
 gs.info(a = b);       //1 - assigns value of 'b' to 'a' and dsiplays that value.
 gs.info(b == c);      //true - because it just checks the value in these variables not the data types.
 gs.info(b === c);     //false - because data types are different - one is a number, other one is a string.
+
+
+********** IF STATEMENT **************
+** IF statement executes the next statement after the condition if TRUE.
+** For executing more statements, use curly braces.
+** You need not explicitly validate the TRUE condition in a IF statement.
+** Similarly using a exclamation before a variable is equal to validating that variable to FALSE.
+** Use curly braces even for single statements, so that adding multiple lines later should not be much of a bother.
+
+** AND is denoted by &&, OR is denoted by ||.
+
+*** TERNARY OPERATOR ***
+
+** (condition) ? <RETURN_IF_TRUE> : <RETURN_IF_FALSE>;
+
+EXAMPLE
+========
+var a=5, b=6;
+var status = (a > b) ? 'CORRECT' : 'INCORRECT';           
+////////////CONDITION  IF_TRUE     IF_FALSE
+
+*********Usage of Boolean String conversion in ServiceNow*************
+
+** gs.getProperty() returns a String value (Boolean string)
+** Like the String values or Integer values, we do not have inbuilt methods to change the data type here.
+** So, you may have to change the string value of gs.getProperty() to Boolean manually.
+
+EXAMPLE
+=======
+
+var isOpenString = 'false';                                   //gs.getProperty() returns true or false in a string like this.
+var isOpen = (isOpenString == 'true') ? true : false;         //Convert that Boolean String into boolean this way.
+
+***********THE SWITCH CASE***********
+
+switch(input_field)       //input_field is the field on which different cases will be written to perform different tasks.
+case<SPACE>field_value    //field_value is the dynamic value of the 'input_field' referenced above.
+
+NOTE - input_field could be a String or Numeric.
+
+var gs.getUserID();           //Assuming it returns the String value - Sys ID.
+
