@@ -1,0 +1,33 @@
+var prb = new GlideRecord("problem");
+
+prb.addQuery("number", "PRB0043171");                //Replace with the problem record number.
+prb.query();
+if(prb.next())
+{	
+	var gd1 = new GlideDateTime();
+	var rca_start = prb.u_rca_started.toString();
+	gd1.setDisplayValue(rca_start);
+	
+	var gd2 = new GlideDateTime();
+	var rca_complete = prb.u_rca_completed.toString();
+	gd2.setDisplayValue(rca_complete);
+  
+	diff = gs.dateDiff(gd1.getDate(),gd2.getDate(),false);
+  diff = diff.split(" ");
+  total_days=parseInt(diff[0]);
+  
+  var business_days=0;
+  var schedule = new GlideSchedule('090eecae0a0a0b260077e1dfa71da828'); //use your schedule sys id here
+  
+  for(i=0;i<today_days;i++) 
+  {  //now check for business days 
+  gd1.addDays(1);          
+	if(schedule.isInSchedule(gd1)) 
+  {
+    business_days++;
+  }
+  
+  }
+  
+  gs.print("Total business days are"+ business_days);
+}
