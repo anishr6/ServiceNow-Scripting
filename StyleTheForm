@@ -1,0 +1,13 @@
+Normal field
+=============
+var myField = 'state';
+var ctrl = g_form.getControl(myField);
+ctrl.style.fontWeight = 'bold';
+ctrl.style.backgroundColor = 'lightBlue';
+
+Reference field
+===============
+var myField = 'assignment_group';
+var ctrl = $('sys_display.' + g_form.getControl(myField).id);
+ctrl.style.fontWeight = 'bold';
+ctrl.style.backgroundColor = 'lightBlue';
