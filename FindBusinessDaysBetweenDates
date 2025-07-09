@@ -12,14 +12,14 @@ if(prb.next())
 	var rca_complete = prb.u_rca_completed.toString();
 	gd2.setDisplayValue(rca_complete);
   
-	diff = gs.dateDiff(gd1.getDate(),gd2.getDate(),false);
+        var diff = gs.dateDiff(gd1.getDate(), gd2.getDate(), false);
   diff = diff.split(" ");
-  total_days=parseInt(diff[0]);
+  var total_days = parseInt(diff[0], 10);
   
   var business_days=0;
   var schedule = new GlideSchedule('090eecae0a0a0b260077e1dfa71da828'); //use your schedule sys id here
   
-  for(i=0;i<today_days;i++) 
+  for (var i = 0; i < total_days; i++)
   {  //now check for business days 
   gd1.addDays(1);          
 	if(schedule.isInSchedule(gd1)) 
