@@ -6,4 +6,5 @@
 	n1 = n1.toString();
 	current.customer_id = n1.replace('BLM','CD');     //Re-uses the same auto-number with a different prefix.
 
-})(current, previous);
+})(current, previous)
+
