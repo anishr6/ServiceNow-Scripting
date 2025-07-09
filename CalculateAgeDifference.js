@@ -1,3 +1,6 @@
+/**************SCRIPT INCLUDE*****************/
+//Glide AJAX Enabled - true
+
 var CalculateAgeDiff = Class.create();
 CalculateAgeDiff.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 	
